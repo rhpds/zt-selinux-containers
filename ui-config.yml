@@ -1,0 +1,24 @@
+---
+antora:
+  name: modules
+  dir: www
+  modules:
+    - name: "01-install"
+      label: "Install"
+      solveButton: true
+    - name: "02-inspect"
+      label: "Inspect"
+      solveButton: true
+    - name: "03-generate-selinux-policy"
+      label: "Generate Selinux Policy"
+      solveButton: true
+    - name: "04-verify"
+      label: "Verify"
+      solveButton: true
+    - name: "05-reinspect"
+      label: "Reinspect"
+      solveButton: true
+
+tabs:
+  - name: ">_ terminal"
+    url: /wetty

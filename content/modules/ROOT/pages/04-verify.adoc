@@ -1,0 +1,41 @@
+You can verify the policies generated using Udica for the container and
+enforced by SELinux.
+
+Query the SELinux policy on the container host to search for allow
+enforcement rules applied to access _/home_ directory.
+
+In `+Terminal 1+`, enter the following.
+
+[source,bash]
+----
+sesearch -A -s my_container.process -t home_root_t -c dir -p read
+----
+
+There is an allow rule in place that allows read access to the _/home_
+directory.
+
+Query the SELinux policy on the container host to search for allow
+enforcement rules applied to access _/var/spool/_ directory.
+
+[source,bash]
+----
+sesearch -A -s my_container.process -t var_spool_t -c dir -p read
+----
+
+There is an allow rule in place that allows read access to the
+_var/spool_ directory.
+
+Query the SELinux policy on the container host to check network access
+
+[source,bash]
+----
+sesearch -A -s my_container.process -t port_type -c tcp_socket
+----
+
+Retrieve the SELinux type associated with TCP port 80. TCP port 80 is
+the port that Apache will bind on.
+
+[source,bash]
+----
+semanage port -l | grep -w "80"
+----
