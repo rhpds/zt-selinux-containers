@@ -2,6 +2,8 @@
 virtualmachines:
   - name: "rhel"
     image: "rhel-9.5"
+    packages:
+      - buildah
     memory: "2G"
     cores: 1
     image_size: "40G"
@@ -12,6 +14,8 @@ virtualmachines:
       - default
   - name: "rhel2"
     image: "rhel-9.5"
+    packages:
+      - buildah
     memory: "2G"
     cores: 1
     image_size: "40G"
