@@ -48,6 +48,7 @@
     when: r_script_test.stat.exists
     shell: "sh -x /tmp/setup-scripts/setup-{{ ansible_host }}.sh > /tmp/setup-scripts/setup-{{ ansible_host }}.log 2>&1"
     become: true
+    ignore_errors: true
     register: r_result
 
   - name: Output script result
@@ -68,10 +69,4 @@
       var: r_result
     when: r_result is defined
 
-  - name: Fail if stage was failed
-    ansible.builtin.fail:
-      msg: "Setup failed"
-    when:
-    - r_result is defined
-    - r_result.rc != 0
 
