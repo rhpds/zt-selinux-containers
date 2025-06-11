@@ -1,4 +1,5 @@
 #!/bin/bash
+useradd rhel
 usermod -aG wheel rhel
 
 buildah rm -a
