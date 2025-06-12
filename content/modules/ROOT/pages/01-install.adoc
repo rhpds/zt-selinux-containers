@@ -13,11 +13,14 @@ setools-console (which is a set of tools that can facilitate SELinux
 policy analysis). In this demo, the container runtime related packages
 are already installed.
 
-For the sake of expediency, switch to the root user.
+For the sake of expediency, switch to the root user in the top terminal.
+
+
+
 [source,bash]
----
+----
 sudo -i
----
+----
 
 Click on the `+Terminal 1+` tab.
 
