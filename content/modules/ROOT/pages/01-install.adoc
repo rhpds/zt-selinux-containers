@@ -47,6 +47,13 @@ podman images
 
 Now we'll use the bottom terminal.
 
+Please switch to the root user.
+
+[source,bash]
+----
+sudo -i
+----
+
 Create a container runtime using podman which passes in-container
 accesses to /home through to the host’s /home read-only, passes
 in-container accesses to /var/spool through to the host’s /var/spool
@@ -72,8 +79,9 @@ podman ps; CONTAINERID=$(podman ps | grep registry.access.redhat.com | cut -b 1-
 ----
 
 When using SELinux, container processes get assigned a container type
-called '`container_t`'. In `+Terminal 1+` Verify the SELinux type
-assigned to the running container.
+called '`container_t`'.
+
+In the top terminal, verify the SELinux type assigned to the running container.
 
 [source,bash]
 ----
