@@ -4,10 +4,8 @@ Udica is a new tool which complements the containers tools (Podman,
 Skopeo, Buildah, etc.) family supported by Red Hat to help improve the
 security of customers container environments.
 
-____
-_NOTE:_ This lab assumes that you have a sound understanding of SELinux
+IMPORTANT: This lab assumes that you have a sound understanding of SELinux
 basics and container fundamentals.
-____
 
 Prior to getting started, we need certain packages such as Udica (which
 is a tool for generating SELinux policies for containers), and
@@ -15,10 +13,15 @@ setools-console (which is a set of tools that can facilitate SELinux
 policy analysis). In this demo, the container runtime related packages
 are already installed.
 
+For the sake of expediency, switch to the root user.
+[source,bash]
+---
+sudo -i
+---
+
 Click on the `+Terminal 1+` tab.
 
-.Terminal 1 tab
-image::../assets/terminal1tab.png[Terminal 1 tab]
+image::terminal1tab.png[Terminal 1 tab]
 
 Install the udica and setools-console packages on the container host
 
