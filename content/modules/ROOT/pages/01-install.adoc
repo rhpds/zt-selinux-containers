@@ -13,20 +13,18 @@ setools-console (which is a set of tools that can facilitate SELinux
 policy analysis). In this demo, the container runtime related packages
 are already installed.
 
-For the sake of expediency, switch to the root user in the top terminal.
+For the sake of expediency, we'll switch to the root user in the top terminal.
 
+image::terminals.png[]
 
+Copy and paste this command into the top terminal to switch to the root user.
 
 [source,bash]
 ----
 sudo -i
 ----
 
-Click on the `+Terminal 1+` tab.
-
-image::terminal1tab.png[Terminal 1 tab]
-
-Install the udica and setools-console packages on the container host
+In the top terminal, install the udica and setools-console packages on the container host.
 
 [source,bash]
 ----
@@ -47,10 +45,7 @@ Use `+podman+` to list the available container images
 podman images
 ----
 
-Click on the `+Terminal 2+` tab.
-
-.Terminal 2 tab
-image::../assets/terminal2tab.png[Terminal 2 tab]
+Now we'll use the bottom terminal.
 
 Create a container runtime using podman which passes in-container
 accesses to /home through to the host’s /home read-only, passes
@@ -63,12 +58,10 @@ container’s port 80.
 CONTAINER=$(podman run -v /home:/home:ro -v /var/spool:/var/spool:rw -d -p 80:80 -it registry.access.redhat.com/ubi9/ubi)
 ----
 
-____
-_NOTE:_ The home directory is mounted with read-only access, and the
+IMPORTANT: The home directory is mounted with read-only access, and the
 /var/spool/ directory is mounted with read-write access.
-____
 
-Go back to `+Terminal 1+`.
+Let's go back to the top terminal.
 
 Check the status of the application container using podman and get the
 running container id
