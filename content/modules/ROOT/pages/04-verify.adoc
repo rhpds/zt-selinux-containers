@@ -6,7 +6,7 @@ enforcement rules applied to access _/home_ directory.
 
 In `+Terminal 1+`, enter the following.
 
-[source,bash]
+[source,bash,run]
 ----
 sesearch -A -s my_container.process -t home_root_t -c dir -p read
 ----
@@ -17,7 +17,7 @@ directory.
 Query the SELinux policy on the container host to search for allow
 enforcement rules applied to access _/var/spool/_ directory.
 
-[source,bash]
+[source,bash,run]
 ----
 sesearch -A -s my_container.process -t var_spool_t -c dir -p read
 ----
@@ -27,7 +27,7 @@ _var/spool_ directory.
 
 Query the SELinux policy on the container host to check network access
 
-[source,bash]
+[source,bash,run]
 ----
 sesearch -A -s my_container.process -t port_type -c tcp_socket
 ----
@@ -35,7 +35,7 @@ sesearch -A -s my_container.process -t port_type -c tcp_socket
 Retrieve the SELinux type associated with TCP port 80. TCP port 80 is
 the port that Apache will bind on.
 
-[source,bash]
+[source,bash,run]
 ----
 semanage port -l | grep -w "80"
 ----
