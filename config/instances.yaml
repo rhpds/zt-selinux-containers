@@ -2,12 +2,7 @@
 virtualmachines:
   - name: "rhel"
     image: "rhel-10-0-07-09-25-3"
-    packages:
-      - buildah
-      - podman
-      - git
-      - httpd
-      - tmux
+    bootloader: efi
     memory: "2G"
     cores: 1
     image_size: "40G"
