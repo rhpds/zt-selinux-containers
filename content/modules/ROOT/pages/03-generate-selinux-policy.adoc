@@ -8,7 +8,7 @@ In the `+Terminal 1+` tab of the lab interface, inspect the running
 container using podman to generate a container inspection file in JSON
 format
 
-[source,bash]
+[source,bash,run]
 ----
 podman inspect $CONTAINERID > container.json
 ----
@@ -17,7 +17,7 @@ Tell Udica to generate the custom SELinux security policy by using the
 container JSON file. In this case the name of the custom SELinux
 security policy is called '`my_container`'
 
-[source,bash]
+[source,bash,run]
 ----
 udica -j container.json my_container
 ----
@@ -25,7 +25,7 @@ udica -j container.json my_container
 You just created a custom SELinux security policy for the container. Now
 you can load this policy into the kernel and make it active.
 
-[source,bash]
+[source,bash,run]
 ----
 semodule -i my_container.cil /usr/share/udica/templates/{base_container.cil,net_container.cil,home_container.cil}
 ----
@@ -33,7 +33,7 @@ semodule -i my_container.cil /usr/share/udica/templates/{base_container.cil,net_
 In `+Terminal 1+`, stop and re-launch the container so that the policies
 take effect.
 
-[source,bash]
+[source,bash,run]
 ----
 podman stop $CONTAINERID
 ----
@@ -41,7 +41,7 @@ podman stop $CONTAINERID
 In `+Terminal 2+`, create a new container runtime from the image which
 uses the new, custom container policy
 
-[source,bash]
+[source,bash,run]
 ----
 CONTAINER=$(podman run --security-opt label=type:my_container.process -v /home:/home:ro -v/var/spool:/var/spool:rw -d -p 80:80 -it registry.access.redhat.com/ubi9/ubi)
 ----
