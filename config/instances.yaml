@@ -5,6 +5,9 @@ virtualmachines:
     packages:
       - buildah
       - podman
+      - git
+      - httpd
+      - tmux
     memory: "2G"
     cores: 1
     image_size: "40G"
