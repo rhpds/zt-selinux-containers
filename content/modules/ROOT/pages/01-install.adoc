@@ -19,28 +19,28 @@ image::terminals.png[]
 
 Copy and paste this command into the top terminal to switch to the root user.
 
-[source,bash]
+[source,bash,run]
 ----
 sudo -i
 ----
 
 In the top terminal, install the udica and setools-console packages on the container host.
 
-[source,bash]
+[source,bash,run]
 ----
 dnf install -y udica setools-console
 ----
 
 Get the latest RHEL9 UBI image
 
-[source,bash]
+[source,bash,run]
 ----
 podman pull registry.access.redhat.com/ubi9/ubi:latest
 ----
 
 Use `+podman+` to list the available container images
 
-[source,bash]
+[source,bash,run]
 ----
 podman images
 ----
@@ -49,7 +49,7 @@ Now we'll use the bottom terminal.
 
 Please switch to the root user.
 
-[source,bash]
+[source,bash,run]
 ----
 sudo -i
 ----
@@ -60,7 +60,7 @@ in-container accesses to /var/spool through to the host’s /var/spool
 read-write, and binds the host’s port 80 to pass traffic to the
 container’s port 80.
 
-[source,bash]
+[source,bash,run]
 ----
 CONTAINER=$(podman run -v /home:/home:ro -v /var/spool:/var/spool:rw -d -p 80:80 -it registry.access.redhat.com/ubi9/ubi)
 ----
@@ -73,7 +73,7 @@ Let's go back to the top terminal.
 Check the status of the application container using podman and get the
 running container id
 
-[source,bash]
+[source,bash,run]
 ----
 podman ps; CONTAINERID=$(podman ps | grep registry.access.redhat.com | cut -b 1-12)
 ----
@@ -83,7 +83,7 @@ called '`container_t`'.
 
 In the top terminal, verify the SELinux type assigned to the running container.
 
-[source,bash]
+[source,bash,run]
 ----
 ps -eZ | grep container_t
 ----
@@ -92,7 +92,7 @@ On Red Hat Enterprise Linux, SELinux is enabled by default and in
 enforcing mode. You can confirm this by inspecting the output of
 `+sestatus+` on the system.
 
-[source,bash]
+[source,bash,run]
 ----
 sestatus
 ----
