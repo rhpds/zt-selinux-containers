@@ -1,7 +1,7 @@
 In the `+Terminal 2+` tab of the lab interface, use a `+podman exec+`
 command to create an interactive shell inside the running container.
 
-[source,bash,run]
+[source,bash]
 ----
 podman exec -t -i $CONTAINER /bin/bash
 ----
@@ -11,7 +11,7 @@ image::../assets/podmanexec.png[podmanexec]
 
 Check the container’s access to the _/home_ directory
 
-[source,bash,run]
+[source,bash]
 ----
 cd /home; ls
 ----
@@ -42,7 +42,7 @@ SELinux is restricting access to the _/var/spool_ directory.
 In the `+Terminal 2+` tab of the lab interface, check the container’s
 write access to the _/var/spool/_ directory
 
-[source,bash,run]
+[source,bash]
 ----
 touch test
 ----
