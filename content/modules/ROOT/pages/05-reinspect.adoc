@@ -1,14 +1,14 @@
 In `+Terminal 2+`, exec into the running container and start a bash
 shell
 
-[source,bash,run]
+[source,bash]
 ----
 podman exec -t -i $CONTAINER /bin/bash
 ----
 
 Check whether container has access to the _/home_ directory
 
-[source,bash,run]
+[source,bash]
 ----
 cd /home/; ls
 ----
@@ -18,7 +18,7 @@ SELinux to allow this action.
 
 Check whether container has read access to the _/var/spool/_ directory
 
-[source,bash,run]
+[source,bash]
 ----
 cd /var/spool/; ls
 ----
@@ -28,7 +28,7 @@ place that tells SELinux to allow this action.
 
 Check whether container has write access to the /var/spool/ directory
 
-[source,bash,run]
+[source,bash]
 ----
 touch test; ls
 ----
@@ -36,7 +36,7 @@ touch test; ls
 Install the netcat (nc) package inside the container to test for port
 bindings
 
-[source,bash,run]
+[source,bash]
 ----
 dnf install -y nc
 ----
@@ -44,7 +44,7 @@ dnf install -y nc
 Tell nc to listen on port 80 inside the container, and timeout after 5
 seconds.
 
-[source,bash,run]
+[source,bash]
 ----
 timeout 5s nc -lvvp 80
 ----
@@ -56,7 +56,7 @@ place that tells SELinux to allow this network action on port 80.
 Tell nc to listen on port 8080 inside the container, and timeout after 5
 seconds.
 
-[source,bash,run]
+[source,bash]
 ----
 timeout 5s nc -lvvp 8080
 ----
