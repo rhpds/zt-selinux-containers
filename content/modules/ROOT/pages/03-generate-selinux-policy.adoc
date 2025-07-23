@@ -41,7 +41,7 @@ podman stop $CONTAINERID
 In `+Terminal 2+`, create a new container runtime from the image which
 uses the new, custom container policy
 
-[source,bash,run]
+[source,bash]
 ----
 CONTAINER=$(podman run --security-opt label=type:my_container.process -v /home:/home:ro -v/var/spool:/var/spool:rw -d -p 80:80 -it registry.access.redhat.com/ubi9/ubi)
 ----
