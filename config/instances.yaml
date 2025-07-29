@@ -11,3 +11,8 @@ virtualmachines:
         value: "bastions"
     networks:
       - default
+    packages:
+      - cockpit
+      - sssd-proxy
+      - pcp
+      - python3-pcp
