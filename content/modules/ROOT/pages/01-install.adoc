@@ -31,11 +31,11 @@ In the top terminal, install the udica and setools-console packages on the conta
 dnf install -y udica setools-console
 ----
 
-Get the latest RHEL9 UBI image
+Get the latest RHEL10 UBI image
 
 [source,bash,run]
 ----
-podman pull registry.access.redhat.com/ubi9/ubi:latest
+podman pull registry.access.redhat.com/ubi10/ubi:latest
 ----
 
 Use `+podman+` to list the available container images
@@ -62,7 +62,7 @@ container’s port 80.
 
 [source,bash,run]
 ----
-CONTAINER=$(podman run -v /home:/home:ro -v /var/spool:/var/spool:rw -d -p 80:80 -it registry.access.redhat.com/ubi9/ubi)
+CONTAINER=$(podman run -v /home:/home:ro -v /var/spool:/var/spool:rw -d -p 80:80 -it registry.access.redhat.com/ubi10/ubi)
 ----
 
 IMPORTANT: The home directory is mounted with read-only access, and the
