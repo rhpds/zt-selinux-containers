@@ -1,4 +1,6 @@
-In `+Terminal 2+`, exec into the running container and start a bash
+IMPORTANT: Use the Second terminal window
+
+In "Second terminal" window, exec into the running container and start a bash
 shell
 
 [source,bash]
