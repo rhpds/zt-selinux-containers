@@ -1,4 +1,6 @@
-In the `+Terminal 2+` tab of the lab interface, use a `+podman exec+`
+IMPORTANT: You will use the bottom terminal called "Second terminal", you will have to copy the command and paste it into the lower terminal window.
+
+In the lower terminal tab of the lab interface, use a `+podman exec+`
 command to create an interactive shell inside the running container.
 
 [source,bash]
@@ -16,7 +18,9 @@ Check the container’s access to the _/home_ directory
 cd /home; ls
 ----
 
-In the `+Terminal 1+` tab of the lab interface, query the SELinux policy
+IMPORTANT: Use the top terminal window
+
+In the top terminal window of the lab interface, query the SELinux policy
 to search for allow enforcement rules applied to access _/home_
 directory
 
@@ -29,7 +33,9 @@ The search returns NO results. Since, there is no allow rule for
 container_t type to get read access to the _/home_ directory, access is
 blocked by SELinux.
 
-In the `+Terminal 2+` tab of the lab interface, check the container’s
+IMPORTANT: Use the Second terminal window
+
+In the "Second terminal" window of the lab interface, check the container’s
 access to the _/var/spool/_ directory
 
 [source,bash,run]
@@ -39,7 +45,7 @@ cd /var/spool/; ls
 
 SELinux is restricting access to the _/var/spool_ directory.
 
-In the `+Terminal 2+` tab of the lab interface, check the container’s
+In the "Second terminal" window of the lab interface, check the container’s
 write access to the _/var/spool/_ directory
 
 [source,bash]
@@ -47,7 +53,9 @@ write access to the _/var/spool/_ directory
 touch test
 ----
 
-In the `+Terminal 1+` tab of the lab interface, query the SELinux policy
+IMPORTANT: Use the top terminal window
+
+In the "terminal" window of the lab interface, query the SELinux policy
 to search for allow enforcement rules applied to access _/var/spool_
 directory
 
