@@ -4,7 +4,9 @@ enforced by SELinux.
 Query the SELinux policy on the container host to search for allow
 enforcement rules applied to access _/home_ directory.
 
-In `+Terminal 1+`, enter the following.
+IMPORTANT: Use the top terminal window
+
+In "terminal", enter the following.
 
 [source,bash,run]
 ----
