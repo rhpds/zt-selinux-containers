@@ -62,7 +62,7 @@ in-container accesses to /var/spool through to the host’s /var/spool
 read-write, and binds the host’s port 80 to pass traffic to the
 container’s port 80.
 
-[source,bash,run]
+[source,bash]
 ----
 CONTAINER=$(podman run -v /home:/home:ro -v /var/spool:/var/spool:rw -d -p 80:80 -it registry.access.redhat.com/ubi10/ubi)
 ----
@@ -70,10 +70,10 @@ CONTAINER=$(podman run -v /home:/home:ro -v /var/spool:/var/spool:rw -d -p 80:80
 IMPORTANT: The home directory is mounted with read-only access, and the
 /var/spool/ directory is mounted with read-write access.
 
-IMPORTANT: You will now switch back to the top terminal.
-
 Check the status of the application container using podman and get the
-running container id
+running container id  
+
+IMPORTANT: You will now switch back to the top terminal.
 
 [source,bash,run]
 ----
