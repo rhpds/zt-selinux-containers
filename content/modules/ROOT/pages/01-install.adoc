@@ -13,6 +13,8 @@ setools-console (which is a set of tools that can facilitate SELinux
 policy analysis). In this demo, the container runtime related packages
 are already installed.
 
+IMPORTANT: Use the top terminal window
+
 For the sake of expediency, we'll switch to the root user in the top terminal.
 
 image::terminals.png[]
@@ -24,7 +26,7 @@ Copy and paste this command into the top terminal to switch to the root user.
 sudo -i
 ----
 
-In the top terminal, install the udica and setools-console packages on the container host.
+Install the udica and setools-console packages on the container host.
 
 [source,bash,run]
 ----
@@ -45,7 +47,7 @@ Use `+podman+` to list the available container images
 podman images
 ----
 
-Now we'll use the bottom terminal.
+IMPORTANT: You will use the bottom terminal called "Second terminal", you will have to copy the command and paste it into the lower terminal window.
 
 Please switch to the root user.
 
@@ -68,7 +70,7 @@ CONTAINER=$(podman run -v /home:/home:ro -v /var/spool:/var/spool:rw -d -p 80:80
 IMPORTANT: The home directory is mounted with read-only access, and the
 /var/spool/ directory is mounted with read-write access.
 
-Let's go back to the top terminal.
+IMPORTANT: You will now switch back to the top terminal.
 
 Check the status of the application container using podman and get the
 running container id
