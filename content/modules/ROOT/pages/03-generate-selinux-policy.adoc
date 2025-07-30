@@ -4,7 +4,9 @@ container. The network ports are a similar situation where Udica uses
 the SELinux userspace libraries to get the correct SELinux label of a
 port that is used by the inspected container.
 
-In the `+Terminal 1+` tab of the lab interface, inspect the running
+IMPORTANT: Use the top terminal window
+
+In the "terminal" window of the lab interface, inspect the running
 container using podman to generate a container inspection file in JSON
 format
 
@@ -30,7 +32,9 @@ you can load this policy into the kernel and make it active.
 semodule -i my_container.cil /usr/share/udica/templates/{base_container.cil,net_container.cil,home_container.cil}
 ----
 
-In `+Terminal 1+`, stop and re-launch the container so that the policies
+IMPORTANT: Use the top terminal window
+
+In the "terminal" window, stop and re-launch the container so that the policies
 take effect.
 
 [source,bash,run]
@@ -38,7 +42,9 @@ take effect.
 podman stop $CONTAINERID
 ----
 
-In `+Terminal 2+`, create a new container runtime from the image which
+IMPORTANT: Use the "Second terminal" window
+
+In `"Second terminal" window, create a new container runtime from the image which
 uses the new, custom container policy
 
 [source,bash]
