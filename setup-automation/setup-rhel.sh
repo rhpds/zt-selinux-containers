@@ -1,4 +1,13 @@
 #!/bin/bash
+
+# Unregister and register the VM
+dnf -y remove katello-ca-consumer-*
+subscription-manager clean
+subscription-manager register --activationkey=$ACTIVATION_KEY --org=$ORG_ID --force
+
+# Install required packages
+dnf install -y podman
+
 useradd rhel
 usermod -aG wheel rhel
 

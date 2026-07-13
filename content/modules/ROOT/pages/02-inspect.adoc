@@ -9,7 +9,7 @@ podman exec -t -i $CONTAINER /bin/bash
 ----
 
 .podmanexec
-image::../assets/podmanexec.png[podmanexec]
+image::podmanexec.png[podmanexec]
 
 Check the container’s access to the _/home_ directory
 
